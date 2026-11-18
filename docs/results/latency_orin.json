@@ -1,0 +1,26 @@
+{
+ "eager": {
+  "select_action_ms_median": 0.9864154853858054,
+  "select_action_ms_p95": 179.24433037405834,
+  "replan_calls": 40,
+  "replan_ms_median": 178.98417596006766,
+  "replan_ms_p95": 179.83783408999443,
+  "peak_gpu_mem_mb": 337.302734375
+ },
+ "compiled": {
+  "select_action_ms_median": 1.0081594809889793,
+  "select_action_ms_p95": 105.84106107708067,
+  "replan_calls": 40,
+  "replan_ms_median": 105.51958699943498,
+  "replan_ms_p95": 107.34982646536082,
+  "peak_gpu_mem_mb": 346.11865234375
+ },
+ "warmup_calls": 20,
+ "timed_calls": 200,
+ "batch_size": 1,
+ "dtype": "float32",
+ "torch": "2.11.0",
+ "device": "Orin",
+ "n_action_steps": 5,
+ "n_flow_steps": 8
+}

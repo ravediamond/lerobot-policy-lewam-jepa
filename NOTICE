@@ -1,0 +1,19 @@
+lerobot_policy_lewam_jepa
+Copyright 2026 ravediamond
+
+This product includes the LeWAM model code from https://github.com/MinghaoFu/lewam
+(commit 83c47030a80cee28f638680b76998d2f6a410914), licensed under the MIT License,
+in src/lerobot_policy_lewam_jepa/_vendor/ (licence text in third_party/LICENSE-lewam-MIT).
+That code includes portions of le-wm (Copyright (c) 2026 Lucas Maes) in encoders.py and module.py.
+
+Changes to the vendored files:
+- _vendor/lewam.py: imports made relative; the encoder crop size is read from the config
+  (upstream fixes it at 202 for resnet18dp).
+- _vendor/encoders.py: imports made relative; the ViT and DINOv3 encoders removed (they import
+  stable-pretraining and timm); build_encoder takes crop_size.
+- _vendor/module.py: the three SIGReg buffers are registered with persistent=False, so they are
+  not written to checkpoints.
+
+sigreg_loss in modeling_lewam_jepa.py follows scripts/train_lewam.py of the same commit.
+
+LeWAM is described in arXiv:2610.12818, "End-to-End World and Action Modeling with JEPAs".
